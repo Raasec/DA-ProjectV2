@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace iTasks
 {
-    internal class Gestor : Utilizador
+    internal class TipoTarefa
     {
-        public string Departamento;
-        public string GereUtilizadores;
+        public int TipoTarefaId;
+        public string TipoTarefaName;
     }
 }
