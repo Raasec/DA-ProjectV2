@@ -8,6 +8,7 @@ namespace iTasks
 {
     internal class Gestor
     {
-        public 
+        public string Departamento;
+        public string GereUtilizadores;
     }
 }
