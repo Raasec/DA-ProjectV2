@@ -118,6 +118,7 @@
     <Compile Include="Programador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tarefa.cs" />
+    <Compile Include="TipoTarefa.cs" />
     <Compile Include="Utilizador.cs" />
     <EmbeddedResource Include="frmConsultarTarefasConcluidas.resx">
       <DependentUpon>frmConsultarTarefasConcluidas.cs</DependentUpon>

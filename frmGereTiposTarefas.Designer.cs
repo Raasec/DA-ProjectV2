@@ -56,6 +56,7 @@
             this.lstLista.Name = "lstLista";
             this.lstLista.Size = new System.Drawing.Size(268, 366);
             this.lstLista.TabIndex = 0;
+            this.lstLista.SelectedIndexChanged += new System.EventHandler(this.lstLista_SelectedIndexChanged);
             // 
             // txtDesc
             // 
@@ -112,6 +113,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmGereTiposTarefas";
             this.Text = "frmGereTiposTarefas";
+            this.Load += new System.EventHandler(this.frmGereTiposTarefas_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

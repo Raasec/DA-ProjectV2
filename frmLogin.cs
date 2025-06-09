@@ -184,6 +184,11 @@ namespace iTasks
 
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         //Transformar de butao para gerar automáticamente ao Registar
         //Criar um messageBox.Show para confirmar o registo 

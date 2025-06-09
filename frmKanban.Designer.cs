@@ -159,13 +159,13 @@
             // gerirUtilizadoresToolStripMenuItem
             // 
             this.gerirUtilizadoresToolStripMenuItem.Name = "gerirUtilizadoresToolStripMenuItem";
-            this.gerirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.gerirUtilizadoresToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.gerirUtilizadoresToolStripMenuItem.Text = "Gerir Utilizadores";
             // 
             // gerirTiposDeTarefasToolStripMenuItem
             // 
             this.gerirTiposDeTarefasToolStripMenuItem.Name = "gerirTiposDeTarefasToolStripMenuItem";
-            this.gerirTiposDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.gerirTiposDeTarefasToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.gerirTiposDeTarefasToolStripMenuItem.Text = "Gerir Tipos de Tarefas";
             // 
             // listagensToolStripMenuItem
@@ -180,13 +180,13 @@
             // tarefasTerminadasToolStripMenuItem
             // 
             this.tarefasTerminadasToolStripMenuItem.Name = "tarefasTerminadasToolStripMenuItem";
-            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.tarefasTerminadasToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.tarefasTerminadasToolStripMenuItem.Text = "Tarefas Concluídas";
             // 
             // tarefasEmCursoToolStripMenuItem
             // 
             this.tarefasEmCursoToolStripMenuItem.Name = "tarefasEmCursoToolStripMenuItem";
-            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(173, 22);
+            this.tarefasEmCursoToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.tarefasEmCursoToolStripMenuItem.Text = "Tarefas em Curso";
             // 
             // btSetDoing
@@ -265,6 +265,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmKanban";
             this.Text = "frmKanban";
+            this.Load += new System.EventHandler(this.frmKanban_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
