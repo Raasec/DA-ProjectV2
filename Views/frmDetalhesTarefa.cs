@@ -21,7 +21,7 @@ namespace iTasks
 
         private void frmDetalhesTarefas_Load(object sender, EventArgs e)
         {
-            using (var db = new MyDbContext())
+            using (var db = new Basededados())
             {
                 var tarefa = db.Tarefas.Find(_tarefaId);
                 if (tarefa == null)
@@ -52,8 +52,9 @@ namespace iTasks
                 cbTipoTarefa.SelectedValue = tarefa.TipoTarefaId;
 
                 // Example: Load static programador list
-                cbProgramador.DataSource = db.Database.SqlQuery<Programador>(
-                    "SELECT Id, Nome FROM Programadores").ToList(); // if you have a Programador table
+                cbProgramador.DataSource = db.Programadors
+                    .Select(p => new { p.Id, p.Nome })
+                    .ToList();
                 cbProgramador.DisplayMember = "Nome";
                 cbProgramador.ValueMember = "Id";
                 cbProgramador.SelectedValue = tarefa.ProgramadorId;
@@ -64,7 +65,7 @@ namespace iTasks
 
         private void btGravar_Click(object sender, EventArgs e)
         {
-            using (var db = new MyDbContext())
+            using (var db = new Basededados())
             {
                 var tarefa = db.Tarefas.Find(_tarefaId);
                 if (tarefa == null)
@@ -77,7 +78,7 @@ namespace iTasks
                 tarefa.DataRealInicio = DateTime.Parse(txtDataRealini.Text);
                 tarefa.DataRealFim = DateTime.Parse(txtdataRealFim.Text);
                 tarefa.Descricao = txtDesc.Text;
-                tarefa.EstadoAtual = int.Parse(txtEstado.Text);
+                tarefa.EstadoAtual = (Tarefa.estadoatual)int.Parse(txtEstado.Text); // mudei o parse aqui 
                 tarefa.DataPrevistaInicio = dtInicio.Value;
                 tarefa.DataPrevistaFim = dtFim.Value;
                 tarefa.Ordem = int.Parse(txtOrdem.Text);

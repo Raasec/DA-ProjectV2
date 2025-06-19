@@ -33,7 +33,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btLogin = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +69,7 @@
             // 
             // btLogin
             // 
-            this.btLogin.Location = new System.Drawing.Point(211, 111);
+            this.btLogin.Location = new System.Drawing.Point(165, 111);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(75, 23);
             this.btLogin.TabIndex = 4;
@@ -78,23 +77,11 @@
             this.btLogin.UseVisualStyleBackColor = true;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
-            // btnRegister
-            // 
-            this.btnRegister.Location = new System.Drawing.Point(134, 111);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(56, 23);
-            this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = true;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 174);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label2);
@@ -115,6 +102,5 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btLogin;
-        private System.Windows.Forms.Button btnRegister;
     }
 }

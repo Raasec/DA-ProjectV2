@@ -9,7 +9,7 @@ namespace iTasks
 {
     class Basededados : DbContext
     {
-        public DbSet<Utilizador> Utilizados;
+        public DbSet<Utilizador> Utilizadores;
         public DbSet<Gestor> Gestors;
         public DbSet<Programador> Programadors;
         public DbSet<Tarefa> Tarefas;

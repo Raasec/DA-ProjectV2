@@ -49,6 +49,7 @@
             this.btFechar.TabIndex = 30;
             this.btFechar.Text = "Fechar";
             this.btFechar.UseVisualStyleBackColor = true;
+            this.btFechar.Click += new System.EventHandler(this.btFechar_Click);
             // 
             // frmConsultaTarefasEmCurso
             // 

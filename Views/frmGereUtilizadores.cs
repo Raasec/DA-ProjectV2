@@ -21,5 +21,15 @@ namespace iTasks
         {
 
         }
+
+        private void btGravarProg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btGravarGestor_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace iTasks
 {
     public partial class frmGereTiposTarefas : Form
     {
-        // isto tem de ser dinamico, n funciona no meu pc mas eu tirei do frmlogin
-        string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\redom\Desktop\DA-MDS-PROJECT\IPL-DA-PROJECT\DatabaseUSER.mdf';Integrated Security=True";
-
         public frmGereTiposTarefas()
         {
             InitializeComponent();
@@ -19,22 +17,20 @@ namespace iTasks
             AtualizarLista();
         }
 
-        // lê da BD e mete tudo na listbox
         private void AtualizarLista()
         {
             lstLista.Items.Clear();
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (var db = new Basededados())
             {
-                conn.Open();
-                string query = "SELECT * FROM TipoTarefa ORDER BY TipoTarefaId";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
+                var lista = db.tipoTarefas
+                    .OrderBy(tipotarefa => tipotarefa.TipoTarefaId)
+                    .ToList();
 
-                while (reader.Read())
+                foreach (var tipoTarefa in lista)
                 {
-                    // mostra "id - descrição"
-                    string linha = $"{reader["TipoTarefaId"]} - {reader["TipoTarefaDescricao"]}";
+                    // mostra "id - descricao"
+                    string linha = $"{tipoTarefa.TipoTarefaId} - {tipoTarefa.TipoTarefaDesc}";
                     lstLista.Items.Add(linha);
                 }
             }
@@ -54,28 +50,28 @@ namespace iTasks
             txtDesc.Text = partes[1].Trim();
         }
 
-        // botão para guardar ou atualizar
-        private void btnGravarDados_Click(object sender, EventArgs e)
+        private void btGravar_Click(object sender, EventArgs e)
         {
             string descricao = txtDesc.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(descricao))
             {
-                MessageBox.Show("Preenche a descrição.");
+                MessageBox.Show("Preenche a descricao.");
                 return;
             }
 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            using (var db = new Basededados())
             {
-                conn.Open();
-
                 if (string.IsNullOrWhiteSpace(txtId.Text))
                 {
                     // novo tipo de tarefa
-                    string insert = "INSERT INTO TipoTarefa (TipoTarefaDescricao) VALUES (@descricao)";
-                    SqlCommand cmd = new SqlCommand(insert, conn);
-                    cmd.Parameters.AddWithValue("@descricao", descricao);
-                    cmd.ExecuteNonQuery();
+                    var novoTipo = new TipoTarefa
+                    {
+                        TipoTarefaDesc = descricao
+                    };
+
+                    db.tipoTarefas.Add(novoTipo);
+                    db.SaveChanges();
 
                     MessageBox.Show("Tipo de tarefa adicionado.");
                 }
@@ -83,13 +79,19 @@ namespace iTasks
                 {
                     // atualizar tipo existente
                     int id = int.Parse(txtId.Text);
-                    string update = "UPDATE TipoTarefa SET TipoTarefaDescricao = @descricao WHERE TipoTarefaId = @id";
-                    SqlCommand cmd = new SqlCommand(update, conn);
-                    cmd.Parameters.AddWithValue("@descricao", descricao);
-                    cmd.Parameters.AddWithValue("@id", id);
-                    cmd.ExecuteNonQuery();
+                    var tipoExistente = db.tipoTarefas.Find(id);
 
-                    MessageBox.Show("Tipo de tarefa atualizado.");
+                    if (tipoExistente != null)
+                    {
+                        tipoExistente.TipoTarefaDesc = descricao;
+                        db.SaveChanges();
+
+                        MessageBox.Show("Tipo de tarefa atualizado.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tipo de tarefa não encontrado.");
+                    }
                 }
             }
 

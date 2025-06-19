@@ -9,6 +9,6 @@ namespace iTasks
     internal class TipoTarefa
     {
         public int TipoTarefaId { get; set; }
-        public string TipoTarefaName { get; set; }
+        public string TipoTarefaDesc { get; set; }
     }
 }

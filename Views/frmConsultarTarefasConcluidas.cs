@@ -16,5 +16,10 @@ namespace iTasks
         {
             InitializeComponent();
         }
+
+        private void btFechar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

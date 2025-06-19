@@ -99,6 +99,7 @@
             this.btGravar.TabIndex = 31;
             this.btGravar.Text = "Gravar Dados";
             this.btGravar.UseVisualStyleBackColor = true;
+            this.btGravar.Click += new System.EventHandler(this.btGravar_Click);
             // 
             // frmGereTiposTarefas
             // 
