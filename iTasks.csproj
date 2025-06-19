@@ -71,46 +71,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vistas\frmConsultarTarefasConcluidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmConsultarTarefasConcluidas.Designer.cs" />
-    <Compile Include="Vistas\frmConsultaTarefasEmCurso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmConsultaTarefasEmCurso.Designer.cs" />
-    <Compile Include="Vistas\frmDetalhesTarefa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmDetalhesTarefa.Designer.cs" />
-    <Compile Include="Vistas\frmGereTiposTarefas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmGereTiposTarefas.Designer.cs" />
-    <Compile Include="Vistas\frmGereUtilizadores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmGereUtilizadores.Designer.cs" />
-    <Compile Include="Vistas\frmKanban.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmKanban.Designer.cs" />
-    <Compile Include="Vistas\frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Vistas\frmLogin.Designer.cs" />
-    <Compile Include="Modelos\Basededados.cs" />
+    <Compile Include="Models\Basededados.cs" />
+    <Compile Include="Models\Tarefa.cs" />
+    <Compile Include="Models\TipoTarefa.cs" />
+    <Compile Include="Models\Utilizador.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Modelos\Tarefa.cs" />
-    <Compile Include="Modelos\TipoTarefa.cs" />
-    <Compile Include="Modelos\Utilizador.cs" />
-    <EmbeddedResource Include="Vistas\frmConsultarTarefasConcluidas.resx" />
-    <EmbeddedResource Include="Vistas\frmConsultaTarefasEmCurso.resx" />
-    <EmbeddedResource Include="Vistas\frmDetalhesTarefa.resx" />
-    <EmbeddedResource Include="Vistas\frmGereTiposTarefas.resx" />
-    <EmbeddedResource Include="Vistas\frmGereUtilizadores.resx" />
-    <EmbeddedResource Include="Vistas\frmKanban.resx" />
-    <EmbeddedResource Include="Vistas\frmLogin.resx" />
+    <Compile Include="Views\frmConsultarTarefasConcluidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmConsultarTarefasConcluidas.Designer.cs">
+      <DependentUpon>frmConsultarTarefasConcluidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmConsultaTarefasEmCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmConsultaTarefasEmCurso.Designer.cs">
+      <DependentUpon>frmConsultaTarefasEmCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmDetalhesTarefa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmDetalhesTarefa.Designer.cs">
+      <DependentUpon>frmDetalhesTarefa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmGereTiposTarefas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmGereTiposTarefas.Designer.cs">
+      <DependentUpon>frmGereTiposTarefas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmGereUtilizadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmGereUtilizadores.Designer.cs">
+      <DependentUpon>frmGereUtilizadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmKanban.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmKanban.Designer.cs">
+      <DependentUpon>frmKanban.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="obj\Debug\iTasks.Properties.Resources.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -120,7 +130,57 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\frmConsultarTarefasConcluidas.resx">
+      <DependentUpon>frmConsultarTarefasConcluidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmConsultaTarefasEmCurso.resx">
+      <DependentUpon>frmConsultaTarefasEmCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmDetalhesTarefa.resx">
+      <DependentUpon>frmDetalhesTarefa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmGereTiposTarefas.resx">
+      <DependentUpon>frmGereTiposTarefas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmGereUtilizadores.resx">
+      <DependentUpon>frmGereUtilizadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmKanban.resx">
+      <DependentUpon>frmKanban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\iTasks.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\iTasks.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\iTasks.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\iTasks.csproj.AssemblyReference.cache" />
     <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.5.1\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.5.1\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.5.1\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.5.1\buildTransitive\net6.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.5.1\buildTransitive\net6.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.5.1\build\EntityFramework.DefaultItems.props" />
+    <None Include="packages\EntityFramework.6.5.1\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.5.1\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.5.1\build\net6.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.5.1\build\net6.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.5.1\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.5.1\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.5.1\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.5.1\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.5.1\EntityFramework.6.5.1.nupkg" />
+    <None Include="packages\EntityFramework.6.5.1\README.md" />
+    <None Include="packages\EntityFramework.6.5.1\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.5.1\tools\net6.0\any\ef6.runtimeconfig.json" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +205,43 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="obj\Debug\iTasks.csproj.FileListAbsolute.txt" />
+    <Content Include="packages\EntityFramework.6.5.1\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\Icon.png" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\win-arm64\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\win-arm64\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\win-arm64\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\win-arm64\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net6.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.5.1\tools\net6.0\any\ef6.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
